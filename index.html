@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Code Learning and Debugging Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI-Powered Code Learning and Debugging Assistant</h1>
+        <p>Analyze, debug, and learn programming with AI assistance.</p>
+    </header>
+    <main>
+        <section id="code-input">
+            <h2>Enter Your Code</h2>
+            <textarea id="code-textarea" placeholder="Paste or type your code here..."></textarea>
+            <div id="actions">
+                <button id="analyze-btn">Analyze Code</button>
+                <button id="explain-btn">Explain Code</button>
+                <button id="detect-errors-btn">Detect Errors</button>
+                <button id="generate-exercise-btn">Generate Exercise</button>
+                <button id="validate-exercise-btn">Validate Solution</button>
+                <select id="difficulty-select">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </select>
+                <button id="tutorial-btn">View Tutorials</button>
+            </div>
+        </section>
+        <section id="results">
+            <h2>Results</h2>
+            <div id="output"></div>
+        </section>
+        <section id="tutorials" style="display: none;">
+            <h2>Interactive Tutorials</h2>
+            <div id="tutorial-content"></div>
+            <button id="back-btn">Back to Main</button>
+        </section>
+    </main>
+    <script src="ai.js"></script>
+    <script src="tutorials.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
