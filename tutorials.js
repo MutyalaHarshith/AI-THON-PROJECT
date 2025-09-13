@@ -330,11 +330,11 @@ console.log(selectionSort([...numbers]));`,
     }
 
     speak() {
-        console.log(\\${this.name} makes a sound.\);
+        console.log(\`\${this.name} makes a sound.\`);
     }
 
     getInfo() {
-        return \\${this.name} is \${this.age} years old.\;
+        return \`\${this.name} is \${this.age} years old.\`;
     }
 }
 
@@ -345,7 +345,7 @@ class Dog extends Animal {
     }
 
     speak() {
-        console.log(\\${this.name} barks!\);
+        console.log(\`\${this.name} barks!\`);
     }
 
     getBreed() {
