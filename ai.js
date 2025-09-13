@@ -2,26 +2,26 @@
 
 function analyzeCode(code) {
     const language = detectLanguage(code);
-    let analysis = AI Code Analysis (${language}):\n;
-    analysis += - Code Length: ${code.length} characters\n;
-    analysis += - Number of Lines: ${code.split('\n').length}\n;
-    analysis += - Estimated Complexity: ${estimateComplexity(code)}\n;
-    analysis += - Code Quality Score: ${calculateQualityScore(code)}/10\n;
+    let analysis = `AI Code Analysis (${language}):\n`;
+    analysis += `- Code Length: ${code.length} characters\n`;
+    analysis += `- Number of Lines: ${code.split('\n').length}\n`;
+    analysis += `- Estimated Complexity: ${estimateComplexity(code)}\n`;
+    analysis += `- Code Quality Score: ${calculateQualityScore(code)}/10\n`;
 
     const ast = parseCodeStructure(code, language);
-    analysis += - Functions: ${ast.functions.length}\n;
-    analysis += - Variables: ${ast.variables.length}\n;
-    analysis += - Loops: ${ast.loops.length}\n;
-    analysis += - Conditionals: ${ast.conditionals.length}\n;
-    analysis += - Classes/Objects: ${ast.classes.length}\n;
+    analysis += `- Functions: ${ast.functions.length}\n`;
+    analysis += `- Variables: ${ast.variables.length}\n`;
+    analysis += `- Loops: ${ast.loops.length}\n`;
+    analysis += `- Conditionals: ${ast.conditionals.length}\n`;
+    analysis += `- Classes/Objects: ${ast.classes.length}\n`;
 
     if (ast.functions.length > 0) {
-        analysis += - Function Names: ${ast.functions.join(', ')}\n;
+        analysis += `- Function Names: ${ast.functions.join(', ')}\n`;
     }
 
     const patterns = detectCodePatterns(code, language);
     if (patterns.length > 0) {
-        analysis += - Detected Patterns: ${patterns.join(', ')}\n;
+        analysis += `- Detected Patterns: ${patterns.join(', ')}\n`;
     }
 
     return analysis;
@@ -30,7 +30,7 @@ function analyzeCode(code) {
 function explainCode(code) {
     let explanation = 'AI Code Explanation:\n';
     const language = detectLanguage(code);
-    explanation += This appears to be ${language} code.\n;
+    explanation += `This appears to be ${language} code.\n`;
     if (code.includes('console.log') || code.includes('print')) {
         explanation += '- It includes output statements to display information.\n';
     }
@@ -58,8 +58,8 @@ function detectErrors(code) {
         }
         errors += '✓ No syntax errors detected.\n';
     } catch (e) {
-        errors += ✗ Syntax Error: ${e.message}\n;
-        errors += 💡 Suggestion: Check for missing brackets, semicolons, or incorrect syntax near the error location.\n;
+        errors += `✗ Syntax Error: ${e.message}\n`;
+        errors += `💡 Suggestion: Check for missing brackets, semicolons, or incorrect syntax near the error location.\n`;
     }
 
     // Language-specific error detection
@@ -211,7 +211,7 @@ function generateExercise(difficulty) {
             },
             {
                 description: 'Write a recursive function to calculate factorial.',
-                validation: (code) => code.includes('function') && code.includes('return') && code.includes('') && code.match(/\w+\s\(\s*\w+\s*-\s*1\s*\)/)
+                validation: (code) => code.includes('function') && code.includes('return') && code.includes('*') && code.match(/\w+\s*\(\s*\w+\s*-\s*1\s*\)/)
             },
             {
                 description: 'Create a class with methods and instantiate it.',
@@ -221,7 +221,7 @@ function generateExercise(difficulty) {
     };
 
     const selected = exercises[difficulty][Math.floor(Math.random() * exercises[difficulty].length)];
-    return AI Generated Exercise (${difficulty}):\n${selected.description}\n\nTry to implement this and then analyze your code!;
+    return `AI Generated Exercise (${difficulty}):\n${selected.description}\n\nTry to implement this and then analyze your code!`;
 }
 
 function validateExerciseSolution(exerciseText, userCode) {
@@ -245,7 +245,7 @@ function validateExerciseSolution(exerciseText, userCode) {
         ],
         advanced: [
             { desc: 'Implement a binary search algorithm.', validation: (code) => code.includes('function') && code.includes('while') && (code.includes('mid') || code.includes('middle')) },
-            { desc: 'Write a recursive function to calculate factorial.', validation: (code) => code.includes('function') && code.includes('return') && code.includes('') && code.match(/\w+\s\(\s*\w+\s*-\s*1\s*\)/) },
+            { desc: 'Write a recursive function to calculate factorial.', validation: (code) => code.includes('function') && code.includes('return') && code.includes('*') && code.match(/\w+\s*\(\s*\w+\s*-\s*1\s*\)/) },
             { desc: 'Create a class with methods and instantiate it.', validation: (code) => code.includes('class') && code.includes('constructor') && code.includes('new') }
         ]
     };
