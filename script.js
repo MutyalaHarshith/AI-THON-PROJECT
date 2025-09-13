@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const validation = validateExerciseSolution(lastGeneratedExercise, userCode);
         if (validation) {
-            output.textContent = Exercise Validation:\n${validation.feedback};
+            output.textContent = `Exercise Validation:\n${validation.feedback}`;
         } else {
             output.textContent = 'Unable to validate this exercise. Please try generating a new one.';
         }
@@ -95,9 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
             tutorialContent.innerHTML = '<p>No more tutorials available.</p>';
             return;
         }
-        let html = <h3>${tutorial.title}</h3><pre><code>${tutorial.codeExample}</code></pre><ol>;
+        let html = `<h3>${tutorial.title}</h3><pre><code>${tutorial.codeExample}</code></pre><ol>`;
         tutorial.steps.forEach(step => {
-            html += <li>${step}</li>;
+            html += `<li>${step}</li>`;
         });
         html += '</ol>';
 
@@ -105,9 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (tutorial.quiz && tutorial.quiz.length > 0) {
             html += '<h4>Quiz</h4><form id="quiz-form">';
             tutorial.quiz.forEach((q, i) => {
-                html += <p>${q.question}</p>;
+                html += `<p>${q.question}</p>`;
                 q.options.forEach((option, idx) => {
-                    html += <label><input type="radio" name="q${i}" value="${idx}"> ${option}</label><br>;
+                    html += `<label><input type="radio" name="q${i}" value="${idx}"> ${option}</label><br>`;
                 });
             });
             html += '<button type="submit">Submit Answers</button></form><div id="quiz-feedback"></div>';
@@ -131,13 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 let score = 0;
                 const total = tutorial.quiz.length;
                 tutorial.quiz.forEach((q, i) => {
-                    const selected = quizForm[q${i}].value;
+                    const selected = quizForm[`q${i}`].value;
                     if (parseInt(selected) === q.correct) {
                         score++;
                     }
                 });
                 const feedbackDiv = document.getElementById('quiz-feedback');
-                feedbackDiv.textContent = You scored ${score} out of ${total}.;
+                feedbackDiv.textContent = `You scored ${score} out of ${total}.`;
             });
         }
 
