@@ -19,17 +19,17 @@
     
 [![](https://img.shields.io/badge/Telegram%20Channel-Join-9cf?style=for-the-badge&logo=telegram&logoColor=blue&style=flat&labelColor=292c3b)](https://t.me/ExistBots) [![](https://img.shields.io/badge/Support%20Group-Join-9cf?style=for-the-badge&logo=telegram&logoColor=blue&style=flat&labelColor=292c3b)](https://t.me/GroupExist) 
 
-</p>
+</p></div>
  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
  <h1>Problem Statement 5: </h1><h2>AI-Powered Code Learning and Debugging Assistant</h2><br>
  <p><b>Objective:</b> Develop an intelligent programming education platform that assists students 
 in learning and debugging code.</p>
-<p>Requirements: <br>
- Code analysis and explanation functionality <br>
- Automated error detection and debugging suggestions <br>
- Programming exercise generation based on difficulty levels <br>
- Interactive tutorials with step-by-step guidance</p>
+<p><b>Requirements: </b><br>
+1. Code analysis and explanation functionality <br>
+2. Automated error detection and debugging suggestions <br>
+3. Programming exercise generation based on difficulty levels <br>
+4. Interactive tutorials with step-by-step guidance</p>
 
 <p><b>Expected Deliverables:</b> Educational programming platform with code analysis tools and 
 interactive learning modules.</p>
